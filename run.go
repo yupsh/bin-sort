@@ -75,16 +75,32 @@ func flags() []cli.Flag {
 	return []cli.Flag{
 		&cli.BoolFlag{Name: flagReverse, Aliases: []string{"r"}, Usage: "reverse the result of comparisons"},
 		&cli.BoolFlag{Name: flagNumeric, Aliases: []string{"n"}, Usage: "compare according to string numerical value"},
-		&cli.BoolFlag{Name: flagHumanNumeric, Aliases: []string{"h"}, Usage: "compare human readable numbers (e.g., 2K 1G)"},
+		&cli.BoolFlag{
+			Name:    flagHumanNumeric,
+			Aliases: []string{"h"},
+			Usage:   "compare human readable numbers (e.g., 2K 1G)",
+		},
 		&cli.BoolFlag{Name: flagMonth, Aliases: []string{"M"}, Usage: "compare (unknown) < 'JAN' < ... < 'DEC'"},
-		&cli.BoolFlag{Name: flagVersion, Aliases: []string{"V"}, Usage: "natural sort of (version) numbers within text"},
+		&cli.BoolFlag{
+			Name:    flagVersion,
+			Aliases: []string{"V"},
+			Usage:   "natural sort of (version) numbers within text",
+		},
 		&cli.BoolFlag{Name: flagUnique, Aliases: []string{"u"}, Usage: "output only the first of an equal run"},
 		&cli.BoolFlag{Name: flagIgnoreCase, Aliases: []string{"f"}, Usage: "fold lower case to upper case characters"},
 		&cli.BoolFlag{Name: flagIgnoreLeadingBlanks, Aliases: []string{"b"}, Usage: "ignore leading blanks"},
 		&cli.BoolFlag{Name: flagRandom, Aliases: []string{"R"}, Usage: "shuffle, but group identical keys"},
-		&cli.BoolFlag{Name: flagStableSort, Aliases: []string{"s"}, Usage: "stabilize sort by disabling last-resort comparison"},
+		&cli.BoolFlag{
+			Name:    flagStableSort,
+			Aliases: []string{"s"},
+			Usage:   "stabilize sort by disabling last-resort comparison",
+		},
 		&cli.IntFlag{Name: flagField, Aliases: []string{"k"}, Usage: "sort via a key; KEYDEF gives location and type"},
-		&cli.StringFlag{Name: flagDelimiter, Aliases: []string{"t"}, Usage: "use SEP instead of non-blank to blank transition"},
+		&cli.StringFlag{
+			Name:    flagDelimiter,
+			Aliases: []string{"t"},
+			Usage:   "use SEP instead of non-blank to blank transition",
+		},
 	}
 }
 
